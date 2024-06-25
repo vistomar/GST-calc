@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Amount: <input type="text" id="amount"> <BR>
+        <br>
+    GST Rate (%): <input type="text" id="rate"><BR>
+        <br>
+    <button onclick="calculateGST()">Calculate</button>
+    <br>
+    GST Amount: <input type="text" id="gst" readonly><BR>
+        <br>
+    Total Amount: <input type="text" id="totalAmount" readonly>
+    
+    
+
+    
+</body>
+
+<SCRIPT>
+       function calculateGST() {
+  let amount = parseFloat(document.getElementById('amount').value);
+  let rate = parseFloat(document.getElementById('rate').value);
+  let gst = (amount * rate) / 100;
+  let totalAmount = amount + gst;
+  document.getElementById('gst').value = gst.toFixed(2);
+  document.getElementById('totalAmount').value = totalAmount.toFixed(2);
+}
+
+</SCRIPT>
+
+</html>
